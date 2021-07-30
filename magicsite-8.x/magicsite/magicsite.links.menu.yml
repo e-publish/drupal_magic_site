@@ -1,0 +1,325 @@
+magicsite.settings_form:
+  title: 'Настрока MagicSite'
+  route_name: magicsite.settings_form
+  description: 'Настройки модуля MagicSite'
+  parent: system.admin_config_system
+  weight: 99
+
+magicsite.sveden:
+  title: Сведения об образовательной организации
+  route_name: magicsite.sveden
+  menu_name: magicsite
+  weight: 10
+
+magicsite.sveden.common:
+  title: Основные сведения
+  parent: magicsite.sveden
+  route_name: magicsite.sveden.common
+  menu_name: magicsite
+  weight: 10
+
+magicsite.sveden.struct:
+  title: Структура и органы управления образовательной организацией
+  parent: magicsite.sveden
+  route_name: magicsite.sveden.struct
+  menu_name: magicsite
+  weight: 20
+
+magicsite.sveden.document:
+  title: Документы
+  parent: magicsite.sveden
+  route_name: magicsite.sveden.document
+  menu_name: magicsite
+  weight: 30
+
+magicsite.sveden.education:
+  title: Образование
+  parent: magicsite.sveden
+  route_name: magicsite.sveden.education
+  menu_name: magicsite
+  weight: 40
+
+magicsite.sveden.edustandarts:
+  title: Образовательные стандарты
+  parent: magicsite.sveden
+  route_name: magicsite.sveden.edustandarts
+  menu_name: magicsite
+  weight: 50
+
+magicsite.sveden.employees:
+  title: Руководство. Педагогический (научно-педагогический) состав
+  parent: magicsite.sveden
+  route_name: magicsite.sveden.employees
+  menu_name: magicsite
+  weight: 60
+
+magicsite.sveden.objects:
+  title: Материально-техническое обеспечение и оснащенность образовательного процесса
+  parent: magicsite.sveden
+  route_name: magicsite.sveden.objects
+  menu_name: magicsite
+  weight: 70
+
+magicsite.sveden.grants:
+  title: Стипендии и меры поддержки обучающихся
+  parent: magicsite.sveden
+  route_name: magicsite.sveden.grants
+  menu_name: magicsite
+  weight: 80
+
+magicsite.sveden.paid_edu:
+  title: Платные образовательные услуги
+  parent: magicsite.sveden
+  route_name: magicsite.sveden.paid_edu
+  menu_name: magicsite
+  weight: 90
+
+magicsite.sveden.budget:
+  title: Финансово-хозяйственная деятельность
+  parent: magicsite.sveden
+  route_name: magicsite.sveden.budget
+  menu_name: magicsite
+  weight: 100
+
+magicsite.sveden.vacant:
+  title: Вакантные места для приема (перевода) обучающихся
+  parent: magicsite.sveden
+  route_name: magicsite.sveden.vacant
+  menu_name: magicsite
+  weight: 110
+
+magicsite.sveden.ovz:
+  title: Доступная среда
+  parent: magicsite.sveden
+  route_name: magicsite.sveden.ovz
+  menu_name: magicsite
+  weight: 120
+
+magicsite.sveden.inter:
+  title: Международное сотрудничество
+  parent: magicsite.sveden
+  route_name: magicsite.sveden.inter
+  menu_name: magicsite
+  weight: 130
+
+magicsite.infosec:
+  title: Информационная безопасность
+  route_name: magicsite.infosec
+  menu_name: magicsite
+  weight: 20
+
+magicsite.infosec.common:
+  title: Локальные нормативные акты в сфере обеспечения информационной безопасности обучающихся
+  parent: magicsite.infosec
+  route_name: magicsite.infosec.common
+  menu_name: magicsite
+  weight: 10
+
+magicsite.infosec.normreg:
+  title: Нормативное регулирование
+  parent: magicsite.infosec
+  route_name: magicsite.infosec.normreg
+  menu_name: magicsite
+  weight: 20
+
+magicsite.infosec.educator:
+  title: Педагогическим работникам
+  parent: magicsite.infosec
+  route_name: magicsite.infosec.educator
+  menu_name: magicsite
+  weight: 30
+
+magicsite.infosec.students:
+  title: Обучающимся
+  parent: magicsite.infosec
+  route_name: magicsite.infosec.students
+  menu_name: magicsite
+  weight: 40
+
+magicsite.infosec.parents:
+  title: Родителям
+  parent: magicsite.infosec
+  route_name: magicsite.infosec.parents
+  menu_name: magicsite
+  weight: 50
+
+magicsite.infosec.sites:
+  title: Детские безопасные сайты
+  parent: magicsite.infosec
+  route_name: magicsite.infosec.sites
+  menu_name: magicsite
+  weight: 60
+
+magicsite.anticorruption:
+  title: Противодействие коррупции
+  route_name: magicsite.anticorruption
+  menu_name: magicsite
+  weight: 30
+
+magicsite.anticorruption.normativnieacti:
+  title: Нормативные правовые и иные акты в сфере противодействия коррупции
+  parent: magicsite.anticorruption
+  route_name: magicsite.anticorruption.normativnieacti
+  menu_name: magicsite
+  weight: 10
+
+magicsite.anticorruption.expertise:
+  title: Антикоррупционная экспертиза
+  parent: magicsite.anticorruption
+  route_name: magicsite.anticorruption.expertise
+  menu_name: magicsite
+  weight: 20
+
+magicsite.anticorruption.iniemetodmaterialy:
+  title: Методические материалы
+  parent: magicsite.anticorruption
+  route_name: magicsite.anticorruption.iniemetodmaterialy
+  menu_name: magicsite
+  weight: 30
+
+magicsite.anticorruption.forms:
+  title: Формы документов, связанных с противодействием коррупции, для заполнения
+  parent: magicsite.anticorruption
+  route_name: magicsite.anticorruption.forms
+  menu_name: magicsite
+  weight: 40
+
+magicsite.anticorruption.svedenodohodah:
+  title: Сведения о доходах, расходах, об имуществе и обязательствах имущественного характера
+  parent: magicsite.anticorruption
+  route_name: magicsite.anticorruption.svedenodohodah
+  menu_name: magicsite
+  weight: 50
+
+magicsite.anticorruption.commission:
+  title: Комиссия по соблюдению требований к служебному поведению и урегулированию конфликта интересов (аттестационная комиссия)
+  parent: magicsite.anticorruption
+  route_name: magicsite.anticorruption.commission
+  menu_name: magicsite
+  weight: 60
+
+magicsite.anticorruption.feedback:
+  title: Обратная связь для сообщений о фактах коррупции
+  parent: magicsite.anticorruption
+  route_name: magicsite.anticorruption.feedback
+  menu_name: magicsite
+  weight: 70
+
+magicsite.anticorruption.responsibility:
+  title: Меры юридической ответственности
+  parent: magicsite.anticorruption
+  route_name: magicsite.anticorruption.responsibility
+  menu_name: magicsite
+  weight: 80
+
+magicsite.anticorruption.infomaterial:
+  title: Информационные материалы
+  parent: magicsite.anticorruption
+  route_name: magicsite.anticorruption.infomaterial
+  menu_name: magicsite
+  weight: 90
+
+magicsite.qualityassessment.qualityassessment:
+  title: Независимая оценка качества
+  route_name: magicsite.qualityassessment.qualityassessment
+  menu_name: magicsite
+  weight: 40
+
+magicsite.shedule.distance_education:
+  title: Дистанционное обучение
+  route_name: magicsite.shedule.distance_education
+  menu_name: magicsite
+  weight: 50
+
+magicsite.educative:
+  title: Воспитательная работа
+  route_name: magicsite.educative
+  menu_name: magicsite
+  weight: 60
+
+magicsite.educative.edwpartdo:
+  title: Часть основной образовательной программы дошкольного образования
+  parent: magicsite.educative
+  route_name: magicsite.educative.edwpartdo
+  menu_name: magicsite
+  weight: 10
+
+magicsite.educative.edwpartnoo:
+  title: Часть основной образовательной программы начального общего образования
+  parent: magicsite.educative
+  route_name: magicsite.educative.edwpartnoo
+  menu_name: magicsite
+  weight: 20
+
+magicsite.educative.edwpartooo:
+  title: Часть основной образовательной программы основного общего образования
+  parent: magicsite.educative
+  route_name: magicsite.educative.edwpartooo
+  menu_name: magicsite
+  weight: 30
+
+magicsite.educative.edwpartsoo:
+  title: Часть основной образовательной программы среднего общего образования
+  parent: magicsite.educative
+  route_name: magicsite.educative.edwpartsoo
+  menu_name: magicsite
+  weight: 40
+
+magicsite.educative.edwanaliz:
+  title: Анализ достижений
+  parent: magicsite.educative
+  route_name: magicsite.educative.edwanaliz
+  menu_name: magicsite
+  weight: 50
+
+magicsite.educative.edwinfo:
+  title: Информация о психолого-педагогической и социальной помощи
+  parent: magicsite.educative
+  route_name: magicsite.educative.edwinfo
+  menu_name: magicsite
+  weight: 60
+
+magicsite.educative.edwevents:
+  title: Общешкольные события
+  parent: magicsite.educative
+  route_name: magicsite.educative.edwevents
+  menu_name: magicsite
+  weight: 70
+
+magicsite.sveden.gia:
+  title: Государственная итоговая аттестация
+  route_name: magicsite.sveden.gia
+  menu_name: magicsite
+  weight: 70
+
+magicsite.meals:
+  title: Организация питания
+  route_name: magicsite.meals
+  menu_name: magicsite
+  weight: 80
+
+magicsite.sveden.meals:
+  title: Организация питания
+  parent: magicsite.meals
+  route_name: magicsite.meals.meals
+  menu_name: magicsite
+  weight: 10
+
+magicsite.food.index:
+  title: Ежедневное меню горячего питания
+  parent: magicsite.meals
+  route_name: magicsite.food.index
+  menu_name: magicsite
+  weight: 20
+
+magicsite.sveden.labor_protection:
+  title: Охрана труда
+  route_name: magicsite.sveden.labor_protection
+  menu_name: magicsite
+  weight: 90
+
+magicsite.sveden.accounting_policy:
+  title: Основные положения учетной политики
+  route_name: magicsite.sveden.accounting_policy
+  menu_name: magicsite
+  weight: 100

@@ -1,0 +1,479 @@
+magicsite.settings_form:
+  path: '/admin/config/magicsite'
+  defaults:
+    _form: '\Drupal\magicsite\Form\SettingsForm'
+    _title: 'Настройка MagicSite'
+  requirements:
+    _permission: 'administer site configuration'
+  options:
+    _admin_route: TRUE
+
+magicsite.sveden:
+  path: '/sveden'
+  defaults:
+    _controller: '\Drupal\magicsite\Controller\MagicSiteController::getContent'
+    _title: 'Сведения об образовательной организации'
+    path: sveden
+    page: list
+  requirements:
+    _permission: 'access content'
+
+magicsite.sveden.common:
+  path: '/sveden/common'
+  defaults:
+    _controller: '\Drupal\magicsite\Controller\MagicSiteController::getContent'
+    _title: 'Основные сведения'
+    path: sveden
+    page: common
+  requirements:
+    _permission: 'access content'
+
+magicsite.sveden.struct:
+  path: '/sveden/struct'
+  defaults:
+    _controller: '\Drupal\magicsite\Controller\MagicSiteController::getContent'
+    _title: 'Структура и органы управления образовательной организацией'
+    path: sveden
+    page: struct
+  requirements:
+    _permission: 'access content'
+
+magicsite.sveden.document:
+  path: '/sveden/document'
+  defaults:
+    _controller: '\Drupal\magicsite\Controller\MagicSiteController::getContent'
+    _title: 'Документы'
+    path: sveden
+    page: document
+  requirements:
+    _permission: 'access content'
+
+magicsite.sveden.education:
+  path: '/sveden/education'
+  defaults:
+    _controller: '\Drupal\magicsite\Controller\MagicSiteController::getContent'
+    _title: 'Образование'
+    path: sveden
+    page: education
+  requirements:
+    _permission: 'access content'
+
+magicsite.sveden.edustandarts:
+  path: '/sveden/edustandarts'
+  defaults:
+    _controller: '\Drupal\magicsite\Controller\MagicSiteController::getContent'
+    _title: 'Образовательные стандарты'
+    path: sveden
+    page: edustandarts
+  requirements:
+    _permission: 'access content'
+
+magicsite.sveden.employees:
+  path: '/sveden/employees'
+  defaults:
+    _controller: '\Drupal\magicsite\Controller\MagicSiteController::getContent'
+    _title: 'Руководство. Педагогический (научно-педагогический) состав'
+    path: sveden
+    page: employees
+  requirements:
+    _permission: 'access content'
+
+magicsite.sveden.objects:
+  path: '/sveden/objects'
+  defaults:
+    _controller: '\Drupal\magicsite\Controller\MagicSiteController::getContent'
+    _title: 'Материально-техническое обеспечение и оснащенность образовательного процесса'
+    path: sveden
+    page: objects
+  requirements:
+    _permission: 'access content'
+
+magicsite.sveden.grants:
+  path: '/sveden/grants'
+  defaults:
+    _controller: '\Drupal\magicsite\Controller\MagicSiteController::getContent'
+    _title: 'Стипендии и меры поддержки обучающихся'
+    path: sveden
+    page: grants
+  requirements:
+    _permission: 'access content'
+
+magicsite.sveden.paid_edu:
+  path: '/sveden/paid_edu'
+  defaults:
+    _controller: '\Drupal\magicsite\Controller\MagicSiteController::getContent'
+    _title: 'Платные образовательные услуги'
+    path: sveden
+    page: paid_edu
+  requirements:
+    _permission: 'access content'
+
+magicsite.sveden.budget:
+  path: '/sveden/budget'
+  defaults:
+    _controller: '\Drupal\magicsite\Controller\MagicSiteController::getContent'
+    _title: 'Финансово-хозяйственная деятельность'
+    path: sveden
+    page: budget
+  requirements:
+    _permission: 'access content'
+
+magicsite.sveden.vacant:
+  path: '/sveden/vacant'
+  defaults:
+    _controller: '\Drupal\magicsite\Controller\MagicSiteController::getContent'
+    _title: 'Вакантные места для приема (перевода) обучающихся'
+    path: sveden
+    page: vacant
+  requirements:
+    _permission: 'access content'
+
+magicsite.sveden.ovz:
+  path: '/sveden/ovz'
+  defaults:
+    _controller: '\Drupal\magicsite\Controller\MagicSiteController::getContent'
+    _title: 'Доступная среда'
+    path: sveden
+    page: ovz
+  requirements:
+    _permission: 'access content'
+
+magicsite.sveden.inter:
+  path: '/sveden/inter'
+  defaults:
+    _controller: '\Drupal\magicsite\Controller\MagicSiteController::getContent'
+    _title: 'Международное сотрудничество'
+    path: sveden
+    page: inter
+  requirements:
+    _permission: 'access content'
+
+magicsite.infosec:
+  path: '/infosec'
+  defaults:
+    _controller: '\Drupal\magicsite\Controller\MagicSiteController::getContent'
+    _title: 'Информационная безопасность'
+    path: infosec
+    page: list
+  requirements:
+    _permission: 'access content'
+
+magicsite.infosec.common:
+  path: '/infosec/common'
+  defaults:
+    _controller: '\Drupal\magicsite\Controller\MagicSiteController::getContent'
+    _title: 'Локальные нормативные акты в сфере обеспечения информационной безопасности обучающихся'
+    path: infosec
+    page: common
+  requirements:
+    _permission: 'access content'
+
+magicsite.infosec.normreg:
+  path: '/infosec/normreg'
+  defaults:
+    _controller: '\Drupal\magicsite\Controller\MagicSiteController::getContent'
+    _title: 'Нормативное регулирование'
+    path: infosec
+    page: normreg
+  requirements:
+    _permission: 'access content'
+
+magicsite.infosec.educator:
+  path: '/infosec/educator'
+  defaults:
+    _controller: '\Drupal\magicsite\Controller\MagicSiteController::getContent'
+    _title: 'Педагогическим работникам'
+    path: infosec
+    page: educator
+  requirements:
+    _permission: 'access content'
+
+magicsite.infosec.students:
+  path: '/infosec/students'
+  defaults:
+    _controller: '\Drupal\magicsite\Controller\MagicSiteController::getContent'
+    _title: 'Обучающимся'
+    path: infosec
+    page: students
+  requirements:
+    _permission: 'access content'
+
+magicsite.infosec.parents:
+  path: '/infosec/parents'
+  defaults:
+    _controller: '\Drupal\magicsite\Controller\MagicSiteController::getContent'
+    _title: 'Родителям'
+    path: infosec
+    page: parents
+  requirements:
+    _permission: 'access content'
+
+magicsite.infosec.sites:
+  path: '/infosec/sites'
+  defaults:
+    _controller: '\Drupal\magicsite\Controller\MagicSiteController::getContent'
+    _title: 'Детские безопасные сайты'
+    path: infosec
+    page: sites
+  requirements:
+    _permission: 'access content'
+
+magicsite.anticorruption:
+  path: '/anticorruption'
+  defaults:
+    _controller: '\Drupal\magicsite\Controller\MagicSiteController::getContent'
+    _title: 'Противодействие коррупции'
+    path: anticorruption
+    page: list
+  requirements:
+    _permission: 'access content'
+
+magicsite.anticorruption.normativnieacti:
+  path: '/anticorruption/normativnieacti'
+  defaults:
+    _controller: '\Drupal\magicsite\Controller\MagicSiteController::getContent'
+    _title: 'Нормативные правовые и иные акты в сфере противодействия коррупции'
+    path: anticorruption
+    page: normativnieacti
+  requirements:
+    _permission: 'access content'
+
+magicsite.anticorruption.expertise:
+  path: '/anticorruption/expertise'
+  defaults:
+    _controller: '\Drupal\magicsite\Controller\MagicSiteController::getContent'
+    _title: 'Антикоррупционная экспертиза'
+    path: anticorruption
+    page: expertise
+  requirements:
+    _permission: 'access content'
+
+magicsite.anticorruption.iniemetodmaterialy:
+  path: '/anticorruption/iniemetodmaterialy'
+  defaults:
+    _controller: '\Drupal\magicsite\Controller\MagicSiteController::getContent'
+    _title: 'Методические материалы'
+    path: anticorruption
+    page: iniemetodmaterialy
+  requirements:
+    _permission: 'access content'
+
+magicsite.anticorruption.forms:
+  path: '/anticorruption/forms'
+  defaults:
+    _controller: '\Drupal\magicsite\Controller\MagicSiteController::getContent'
+    _title: 'Формы документов, связанных с противодействием коррупции, для заполнения'
+    path: anticorruption
+    page: forms
+  requirements:
+    _permission: 'access content'
+
+magicsite.anticorruption.svedenodohodah:
+  path: '/anticorruption/svedenodohodah'
+  defaults:
+    _controller: '\Drupal\magicsite\Controller\MagicSiteController::getContent'
+    _title: 'Сведения о доходах, расходах, об имуществе и обязательствах имущественного характера'
+    path: anticorruption
+    page: svedenodohodah
+  requirements:
+    _permission: 'access content'
+
+magicsite.anticorruption.commission:
+  path: '/anticorruption/commission'
+  defaults:
+    _controller: '\Drupal\magicsite\Controller\MagicSiteController::getContent'
+    _title: 'Комиссия по соблюдению требований к служебному поведению и урегулированию конфликта интересов (аттестационная комиссия)'
+    path: anticorruption
+    page: commission
+  requirements:
+    _permission: 'access content'
+
+magicsite.anticorruption.feedback:
+  path: '/anticorruption/feedback'
+  defaults:
+    _controller: '\Drupal\magicsite\Controller\MagicSiteController::getContent'
+    _title: 'Обратная связь для сообщений о фактах коррупции'
+    path: anticorruption
+    page: feedback
+  requirements:
+    _permission: 'access content'
+
+magicsite.anticorruption.responsibility:
+  path: '/anticorruption/responsibility'
+  defaults:
+    _controller: '\Drupal\magicsite\Controller\MagicSiteController::getContent'
+    _title: 'Меры юридической ответственности'
+    path: anticorruption
+    page: responsibility
+  requirements:
+    _permission: 'access content'
+
+magicsite.anticorruption.infomaterial:
+  path: '/anticorruption/infomaterial'
+  defaults:
+    _controller: '\Drupal\magicsite\Controller\MagicSiteController::getContent'
+    _title: 'Информационные материалы'
+    path: anticorruption
+    page: infomaterial
+  requirements:
+    _permission: 'access content'
+
+magicsite.qualityassessment.qualityassessment:
+  path: '/qualityassessment/qualityassessment'
+  defaults:
+    _controller: '\Drupal\magicsite\Controller\MagicSiteController::getContent'
+    _title: 'Независимая оценка качества'
+    path: qualityassessment
+    page: qualityassessment
+  requirements:
+    _permission: 'access content'
+
+magicsite.shedule.distance_education:
+  path: '/shedule/distance_education'
+  defaults:
+    _controller: '\Drupal\magicsite\Controller\MagicSiteController::getContent'
+    _title: 'Дистанционное обучение'
+    path: shedule
+    page: distance_education
+  requirements:
+    _permission: 'access content'
+
+magicsite.educative:
+  path: '/educative'
+  defaults:
+    _controller: '\Drupal\magicsite\Controller\MagicSiteController::getContent'
+    _title: 'Воспитательная работа'
+    path: educative
+    page: list
+  requirements:
+    _permission: 'access content'
+
+magicsite.educative.edwpartdo:
+  path: '/educative/edwpartdo'
+  defaults:
+    _controller: '\Drupal\magicsite\Controller\MagicSiteController::getContent'
+    _title: 'Часть основной образовательной программы дошкольного образования'
+    path: educative
+    page: edwpartdo
+  requirements:
+    _permission: 'access content'
+
+magicsite.educative.edwpartnoo:
+  path: '/educative/edwpartnoo'
+  defaults:
+    _controller: '\Drupal\magicsite\Controller\MagicSiteController::getContent'
+    _title: 'Часть основной образовательной программы начального общего образования'
+    path: educative
+    page: edwpartnoo
+  requirements:
+    _permission: 'access content'
+
+magicsite.educative.edwpartooo:
+  path: '/educative/edwpartooo'
+  defaults:
+    _controller: '\Drupal\magicsite\Controller\MagicSiteController::getContent'
+    _title: 'Часть основной образовательной программы основного общего образования'
+    path: educative
+    page: edwpartooo
+  requirements:
+    _permission: 'access content'
+
+magicsite.educative.edwpartsoo:
+  path: '/educative/edwpartsoo'
+  defaults:
+    _controller: '\Drupal\magicsite\Controller\MagicSiteController::getContent'
+    _title: 'Часть основной образовательной программы среднего общего образования'
+    path: educative
+    page: edwpartsoo
+  requirements:
+    _permission: 'access content'
+
+magicsite.educative.edwanaliz:
+  path: '/educative/edwanaliz'
+  defaults:
+    _controller: '\Drupal\magicsite\Controller\MagicSiteController::getContent'
+    _title: 'Анализ достижений'
+    path: educative
+    page: edwanaliz
+  requirements:
+    _permission: 'access content'
+
+magicsite.educative.edwinfo:
+  path: '/educative/edwinfo'
+  defaults:
+    _controller: '\Drupal\magicsite\Controller\MagicSiteController::getContent'
+    _title: 'Информация о психолого-педагогической и социальной помощи'
+    path: educative
+    page: edwinfo
+  requirements:
+    _permission: 'access content'
+
+magicsite.educative.edwevents:
+  path: '/educative/edwevents'
+  defaults:
+    _controller: '\Drupal\magicsite\Controller\MagicSiteController::getContent'
+    _title: 'Общешкольные события'
+    path: educative
+    page: edwevents
+  requirements:
+    _permission: 'access content'
+
+magicsite.sveden.gia:
+  path: '/sveden/gia'
+  defaults:
+    _controller: '\Drupal\magicsite\Controller\MagicSiteController::getContent'
+    _title: 'Государственная итоговая аттестация'
+    path: sveden
+    page: gia
+  requirements:
+    _permission: 'access content'
+
+magicsite.meals:
+  path: '/meals'
+  defaults:
+    _controller: '\Drupal\magicsite\Controller\MagicSiteController::getContent'
+    _title: 'Организация питания'
+    path: meals
+    page: list
+  requirements:
+    _permission: 'access content'
+
+magicsite.meals.meals:
+  path: '/sveden/meals'
+  defaults:
+    _controller: '\Drupal\magicsite\Controller\MagicSiteController::getContent'
+    _title: 'Организация питания'
+    path: sveden
+    page: meals
+  requirements:
+    _permission: 'access content'
+
+magicsite.food.index:
+  path: '/food/index'
+  defaults:
+    _controller: '\Drupal\magicsite\Controller\MagicSiteController::getContent'
+    _title: 'Ежедневное меню горячего питания'
+    path: food
+    page: index
+  requirements:
+    _permission: 'access content'
+
+magicsite.sveden.labor_protection:
+  path: '/sveden/labor_protection'
+  defaults:
+    _controller: '\Drupal\magicsite\Controller\MagicSiteController::getContent'
+    _title: 'Охрана труда'
+    path: sveden
+    page: labor_protection
+  requirements:
+    _permission: 'access content'
+
+magicsite.sveden.accounting_policy:
+  path: '/sveden/accounting_policy'
+  defaults:
+    _controller: '\Drupal\magicsite\Controller\MagicSiteController::getContent'
+    _title: 'Основные положения учетной политики'
+    path: sveden
+    page: accounting_policy
+  requirements:
+    _permission: 'access content'

@@ -1,0 +1,626 @@
+<?php
+function magicsite_init() {
+}
+
+function magicsite_menu() {
+  $items = array();
+  $items['admin/config/magicsite'] = array(
+    'title' => 'Настройки MagicSite',
+    'description' => 'Настройки модуля MagicSite.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('magicsite_settings'),
+    'access callback' => 'user_access',
+    'access arguments' => array('administer site configuration'),
+    'type' => MENU_LOCAL_TASK,
+  );
+  $items['sveden'] = array(
+    'title' => 'Сведения об образовательной организации',
+    'page callback' => 'magicsite_page',
+    'page arguments' => array('sveden', 'list'),
+    'access callback' => TRUE,
+    'menu_name' => 'magicsite-menu',
+    'type' => MENU_NORMAL_ITEM,
+    'weight' => 10,
+  );
+  $items['sveden/common'] = array(
+    'title' => 'Основные сведения',
+    'page callback' => 'magicsite_page',
+    'page arguments' => array('sveden', 'common'),
+    'access callback' => TRUE,
+    'menu_name' => 'magicsite-menu',
+    'type' => MENU_NORMAL_ITEM,
+    'weight' => 10,
+  );
+  $items['sveden/struct'] = array(
+    'title' => 'Структура и органы управления образовательной организацией',
+    'page callback' => 'magicsite_page',
+    'page arguments' => array('sveden', 'struct'),
+    'access callback' => TRUE,
+    'menu_name' => 'magicsite-menu',
+    'type' => MENU_NORMAL_ITEM,
+    'weight' => 20,
+  );
+  $items['sveden/document'] = array(
+    'title' => 'Документы',
+    'page callback' => 'magicsite_page',
+    'page arguments' => array('sveden', 'document'),
+    'access callback' => TRUE,
+    'menu_name' => 'magicsite-menu',
+    'type' => MENU_NORMAL_ITEM,
+    'weight' => 30,
+  );
+  $items['sveden/education'] = array(
+    'title' => 'Образование',
+    'page callback' => 'magicsite_page',
+    'page arguments' => array('sveden', 'education'),
+    'access callback' => TRUE,
+    'menu_name' => 'magicsite-menu',
+    'type' => MENU_NORMAL_ITEM,
+    'weight' => 40,
+  );
+  $items['sveden/edustandarts'] = array(
+    'title' => 'Образовательные стандарты',
+    'page callback' => 'magicsite_page',
+    'page arguments' => array('sveden', 'edustandarts'),
+    'access callback' => TRUE,
+    'menu_name' => 'magicsite-menu',
+    'type' => MENU_NORMAL_ITEM,
+    'weight' => 50,
+  );
+  $items['sveden/employees'] = array(
+    'title' => 'Руководство. Педагогический (научно-педагогический) состав',
+    'page callback' => 'magicsite_page',
+    'page arguments' => array('sveden', 'employees'),
+    'access callback' => TRUE,
+    'menu_name' => 'magicsite-menu',
+    'type' => MENU_NORMAL_ITEM,
+    'weight' => 60,
+  );
+  $items['sveden/objects'] = array(
+    'title' => 'Материально-техническое обеспечение и оснащенность образовательного процесса',
+    'page callback' => 'magicsite_page',
+    'page arguments' => array('sveden', 'objects'),
+    'access callback' => TRUE,
+    'menu_name' => 'magicsite-menu',
+    'type' => MENU_NORMAL_ITEM,
+    'weight' => 70,
+  );
+  $items['sveden/grants'] = array(
+    'title' => 'Стипендии и меры поддержки обучающихся',
+    'page callback' => 'magicsite_page',
+    'page arguments' => array('sveden', 'grants'),
+    'access callback' => TRUE,
+    'menu_name' => 'magicsite-menu',
+    'type' => MENU_NORMAL_ITEM,
+    'weight' => 80,
+  );
+  $items['sveden/paid_edu'] = array(
+    'title' => 'Платные образовательные услуги',
+    'page callback' => 'magicsite_page',
+    'page arguments' => array('sveden', 'paid_edu'),
+    'access callback' => TRUE,
+    'menu_name' => 'magicsite-menu',
+    'type' => MENU_NORMAL_ITEM,
+    'weight' => 90,
+  );
+  $items['sveden/budget'] = array(
+    'title' => 'Финансово-хозяйственная деятельность',
+    'page callback' => 'magicsite_page',
+    'page arguments' => array('sveden', 'budget'),
+    'access callback' => TRUE,
+    'menu_name' => 'magicsite-menu',
+    'type' => MENU_NORMAL_ITEM,
+    'weight' => 100,
+  );
+  $items['sveden/vacant'] = array(
+    'title' => 'Вакантные места для приема (перевода) обучающихся',
+    'page callback' => 'magicsite_page',
+    'page arguments' => array('sveden', 'vacant'),
+    'access callback' => TRUE,
+    'menu_name' => 'magicsite-menu',
+    'type' => MENU_NORMAL_ITEM,
+    'weight' => 110,
+  );
+  $items['sveden/ovz'] = array(
+    'title' => 'Доступная среда',
+    'page callback' => 'magicsite_page',
+    'page arguments' => array('sveden', 'ovz'),
+    'access callback' => TRUE,
+    'menu_name' => 'magicsite-menu',
+    'type' => MENU_NORMAL_ITEM,
+    'weight' => 120,
+  );
+  $items['sveden/inter'] = array(
+    'title' => 'Международное сотрудничество',
+    'page callback' => 'magicsite_page',
+    'page arguments' => array('sveden', 'inter'),
+    'access callback' => TRUE,
+    'menu_name' => 'magicsite-menu',
+    'type' => MENU_NORMAL_ITEM,
+    'weight' => 130,
+  );
+
+  $items['infosec'] = array(
+    'title' => 'Информационная безопасность',
+    'page callback' => 'magicsite_page',
+    'page arguments' => array('infosec', 'list'),
+    'access callback' => TRUE,
+    'menu_name' => 'magicsite-menu',
+    'type' => MENU_NORMAL_ITEM,
+    'weight' => 20,
+  );
+  $items['infosec/common'] = array(
+    'title' => 'Локальные нормативные акты в сфере обеспечения информационной безопасности обучающихся',
+    'page callback' => 'magicsite_page',
+    'page arguments' => array('infosec', 'common'),
+    'access callback' => TRUE,
+    'menu_name' => 'magicsite-menu',
+    'type' => MENU_NORMAL_ITEM,
+    'weight' => 10,
+  );
+  $items['infosec/normreg'] = array(
+    'title' => 'Нормативное регулирование',
+    'page callback' => 'magicsite_page',
+    'page arguments' => array('infosec', 'normreg'),
+    'access callback' => TRUE,
+    'menu_name' => 'magicsite-menu',
+    'type' => MENU_NORMAL_ITEM,
+    'weight' => 20,
+  );
+  $items['infosec/educator'] = array(
+    'title' => 'Педагогическим работникам',
+    'page callback' => 'magicsite_page',
+    'page arguments' => array('infosec', 'educator'),
+    'access callback' => TRUE,
+    'menu_name' => 'magicsite-menu',
+    'type' => MENU_NORMAL_ITEM,
+    'weight' => 30,
+  );
+  $items['infosec/students'] = array(
+    'title' => 'Обучающимся',
+    'page callback' => 'magicsite_page',
+    'page arguments' => array('infosec', 'students'),
+    'access callback' => TRUE,
+    'menu_name' => 'magicsite-menu',
+    'type' => MENU_NORMAL_ITEM,
+    'weight' => 40,
+  );
+  $items['infosec/parents'] = array(
+    'title' => 'Родителям',
+    'page callback' => 'magicsite_page',
+    'page arguments' => array('infosec', 'parents'),
+    'access callback' => TRUE,
+    'menu_name' => 'magicsite-menu',
+    'type' => MENU_NORMAL_ITEM,
+    'weight' => 50,
+  );
+  $items['infosec/sites'] = array(
+    'title' => 'Детские безопасные сайты',
+    'page callback' => 'magicsite_page',
+    'page arguments' => array('infosec', 'sites'),
+    'access callback' => TRUE,
+    'menu_name' => 'magicsite-menu',
+    'type' => MENU_NORMAL_ITEM,
+    'weight' => 60,
+  );
+
+  $items['anticorruption'] = array(
+    'title' => 'Противодействие коррупции',
+    'page callback' => 'magicsite_page',
+    'page arguments' => array('anticorruption', 'list'),
+    'access callback' => TRUE,
+    'menu_name' => 'magicsite-menu',
+    'type' => MENU_NORMAL_ITEM,
+    'weight' => 30,
+  );
+  $items['anticorruption/normativnieacti'] = array(
+    'title' => 'Нормативные правовые и иные акты в сфере противодействия коррупции',
+    'page callback' => 'magicsite_page',
+    'page arguments' => array('anticorruption', 'normativnieacti'),
+    'access callback' => TRUE,
+    'menu_name' => 'magicsite-menu',
+    'type' => MENU_NORMAL_ITEM,
+    'weight' => 10,
+  );
+  $items['anticorruption/expertise'] = array(
+    'title' => 'Антикоррупционная экспертиза',
+    'page callback' => 'magicsite_page',
+    'page arguments' => array('anticorruption', 'expertise'),
+    'access callback' => TRUE,
+    'menu_name' => 'magicsite-menu',
+    'type' => MENU_NORMAL_ITEM,
+    'weight' => 20,
+  );
+  $items['anticorruption/iniemetodmaterialy'] = array(
+    'title' => 'Методические материалы',
+    'page callback' => 'magicsite_page',
+    'page arguments' => array('anticorruption', 'iniemetodmaterialy'),
+    'access callback' => TRUE,
+    'menu_name' => 'magicsite-menu',
+    'type' => MENU_NORMAL_ITEM,
+    'weight' => 30,
+  );
+  $items['anticorruption/forms'] = array(
+    'title' => 'Формы документов, связанных с противодействием коррупции, для заполнения',
+    'page callback' => 'magicsite_page',
+    'page arguments' => array('anticorruption', 'forms'),
+    'access callback' => TRUE,
+    'menu_name' => 'magicsite-menu',
+    'type' => MENU_NORMAL_ITEM,
+    'weight' => 40,
+  );
+  $items['anticorruption/svedenodohodah'] = array(
+    'title' => 'Сведения о доходах, расходах, об имуществе и обязательствах имущественного характера',
+    'page callback' => 'magicsite_page',
+    'page arguments' => array('anticorruption', 'svedenodohodah'),
+    'access callback' => TRUE,
+    'menu_name' => 'magicsite-menu',
+    'type' => MENU_NORMAL_ITEM,
+    'weight' => 50,
+  );
+  $items['anticorruption/commission'] = array(
+    'title' => 'Комиссия по соблюдению требований к служебному поведению и урегулированию конфликта интересов (аттестационная комиссия)',
+    'page callback' => 'magicsite_page',
+    'page arguments' => array('anticorruption', 'commission'),
+    'access callback' => TRUE,
+    'menu_name' => 'magicsite-menu',
+    'type' => MENU_NORMAL_ITEM,
+    'weight' => 60,
+  );
+  $items['anticorruption/feedback'] = array(
+    'title' => 'Обратная связь для сообщений о фактах коррупции',
+    'page callback' => 'magicsite_page',
+    'page arguments' => array('anticorruption', 'feedback'),
+    'access callback' => TRUE,
+    'menu_name' => 'magicsite-menu',
+    'type' => MENU_NORMAL_ITEM,
+    'weight' => 70,
+  );
+  $items['anticorruption/responsibility'] = array(
+    'title' => 'Меры юридической ответственности',
+    'page callback' => 'magicsite_page',
+    'page arguments' => array('anticorruption', 'responsibility'),
+    'access callback' => TRUE,
+    'menu_name' => 'magicsite-menu',
+    'type' => MENU_NORMAL_ITEM,
+    'weight' => 80,
+  );
+  $items['anticorruption/infomaterial'] = array(
+    'title' => 'Информационные материалы',
+    'page callback' => 'magicsite_page',
+    'page arguments' => array('anticorruption', 'infomaterial'),
+    'access callback' => TRUE,
+    'menu_name' => 'magicsite-menu',
+    'type' => MENU_NORMAL_ITEM,
+    'weight' => 90,
+  );
+
+  $items['qualityassessment'] = array(
+    'title' => 'Независимая оценка качества',
+    'page callback' => 'magicsite_page',
+    'page arguments' => array('qualityassessment', 'qualityassessment'),
+    'access callback' => TRUE,
+    'menu_name' => 'magicsite-menu',
+    'type' => MENU_NORMAL_ITEM,
+    'weight' => 40,
+  );
+
+  $items['distance_education'] = array(
+    'title' => 'Дистанционное обучение',
+    'page callback' => 'magicsite_page',
+    'page arguments' => array('shedule', 'distance_education'),
+    'access callback' => TRUE,
+    'menu_name' => 'magicsite-menu',
+    'type' => MENU_NORMAL_ITEM,
+    'weight' => 50,
+  );
+
+  $items['educative'] = array(
+    'title' => 'Воспитательная работа',
+    'page callback' => 'magicsite_page',
+    'page arguments' => array('educative', 'list'),
+    'access callback' => TRUE,
+    'menu_name' => 'magicsite-menu',
+    'type' => MENU_NORMAL_ITEM,
+    'weight' => 60,
+  );
+  $items['educative/edwpartdo'] = array(
+    'title' => 'Часть основной образовательной программы дошкольного образования',
+    'page callback' => 'magicsite_page',
+    'page arguments' => array('educative', 'edwpartdo'),
+    'access callback' => TRUE,
+    'menu_name' => 'magicsite-menu',
+    'type' => MENU_NORMAL_ITEM,
+    'weight' => 10,
+  );
+  $items['educative/edwpartnoo'] = array(
+    'title' => 'Часть основной образовательной программы начального общего образования',
+    'page callback' => 'magicsite_page',
+    'page arguments' => array('educative', 'edwpartnoo'),
+    'access callback' => TRUE,
+    'menu_name' => 'magicsite-menu',
+    'type' => MENU_NORMAL_ITEM,
+    'weight' => 20,
+  );
+  $items['educative/edwpartooo'] = array(
+    'title' => 'Часть основной образовательной программы основного общего образования',
+    'page callback' => 'magicsite_page',
+    'page arguments' => array('educative', 'edwpartooo'),
+    'access callback' => TRUE,
+    'menu_name' => 'magicsite-menu',
+    'type' => MENU_NORMAL_ITEM,
+    'weight' => 30,
+  );
+  $items['educative/edwpartsoo'] = array(
+    'title' => 'Часть основной образовательной программы среднего общего образования',
+    'page callback' => 'magicsite_page',
+    'page arguments' => array('educative', 'edwpartsoo'),
+    'access callback' => TRUE,
+    'menu_name' => 'magicsite-menu',
+    'type' => MENU_NORMAL_ITEM,
+    'weight' => 40,
+  );
+  $items['educative/edwanaliz'] = array(
+    'title' => 'Анализ достижений',
+    'page callback' => 'magicsite_page',
+    'page arguments' => array('educative', 'edwanaliz'),
+    'access callback' => TRUE,
+    'menu_name' => 'magicsite-menu',
+    'type' => MENU_NORMAL_ITEM,
+    'weight' => 50,
+  );
+  $items['educative/edwinfo'] = array(
+    'title' => 'Информация о психолого-педагогической и социальной помощи',
+    'page callback' => 'magicsite_page',
+    'page arguments' => array('educative', 'edwinfo'),
+    'access callback' => TRUE,
+    'menu_name' => 'magicsite-menu',
+    'type' => MENU_NORMAL_ITEM,
+    'weight' => 60,
+  );
+  $items['educative/edwevents'] = array(
+    'title' => 'Общешкольные события',
+    'page callback' => 'magicsite_page',
+    'page arguments' => array('educative', 'edwevents'),
+    'access callback' => TRUE,
+    'menu_name' => 'magicsite-menu',
+    'type' => MENU_NORMAL_ITEM,
+    'weight' => 70,
+  );
+
+  $items['gia'] = array(
+    'title' => 'Государственная итоговая аттестация',
+    'page callback' => 'magicsite_page',
+    'page arguments' => array('sveden', 'gia'),
+    'access callback' => TRUE,
+    'menu_name' => 'magicsite-menu',
+    'type' => MENU_NORMAL_ITEM,
+    'weight' => 70,
+  );
+
+  $items['meals'] = array(
+    'title' => 'Организация питания',
+    'page callback' => 'magicsite_page',
+    'page arguments' => array('meals', 'list'),
+    'access callback' => TRUE,
+    'menu_name' => 'magicsite-menu',
+    'type' => MENU_NORMAL_ITEM,
+    'weight' => 80,
+  );
+
+  $items['food/meals'] = array(
+    'title' => 'Организация питания',
+    'page callback' => 'magicsite_page',
+    'page arguments' => array('sveden', 'meals'),
+    'access callback' => TRUE,
+    'menu_name' => 'magicsite-menu',
+    'type' => MENU_CALLBACK,
+  );
+
+  $items['food'] = array(
+    'title' => 'Ежедневное меню горячего питания',
+    'page callback' => 'magicsite_page',
+    'page arguments' => array('food', 'index'),
+    'access callback' => TRUE,
+    'menu_name' => 'magicsite-menu',
+    'type' => MENU_CALLBACK,
+  );
+
+  $items['labor_protection'] = array(
+    'title' => 'Охрана труда',
+    'page callback' => 'magicsite_page',
+    'page arguments' => array('sveden', 'labor_protection'),
+    'access callback' => TRUE,
+    'menu_name' => 'magicsite-menu',
+    'type' => MENU_NORMAL_ITEM,
+    'weight' => 90,
+  );
+
+  $items['accounting_policy'] = array(
+    'title' => 'Основные положения учетной политики',
+    'page callback' => 'magicsite_page',
+    'page arguments' => array('sveden', 'accounting_policy'),
+    'access callback' => TRUE,
+    'menu_name' => 'magicsite-menu',
+    'type' => MENU_NORMAL_ITEM,
+    'weight' => 100,
+  );
+
+  return $items;
+}
+
+function magicsite_page($path, $page) {
+  $output = '';
+  $url = variable_get('magicsite_url', '');
+  if (!strlen($url)) {
+    drupal_set_message('Модуль интеграции с MagicSite не настроен.', 'error');
+  } elseif ($page == 'list') {
+    switch ($path) {
+      case 'meals':
+        $output  .= '<ul class="menu">';
+        $output  .= '<li class="first leaf"><a href="/food/meals">Организация питания</a></li>';
+        $output  .= '<li class="leaf"><a href="/food">Ежедневное меню горячего питания</a></li>';
+        $output  .= '</ul>';
+        break;
+      default:
+        $parent = menu_link_get_preferred($path);
+        $parameters = array(
+          'active_trail' => array($parent['plid']),
+    	    'only_active_trail' => FALSE,
+    	    'min_depth' => $parent['depth']+1,
+    	    'max_depth' => $parent['depth']+1,
+          'conditions' => array('plid' => $parent['mlid']),
+        );
+        $children = menu_build_tree($parent['menu_name'], $parameters);
+        $menu_render = menu_tree_output($children);
+        $output .= drupal_render($menu_render);
+    }
+  } else {
+    drupal_add_js('https://js.edusite.ru/jquery.fancybox.min.js', 'external');
+    drupal_add_js('https://api-maps.yandex.ru/2.1/?lang=ru_RU', 'external');
+    drupal_add_js(drupal_get_path('module', 'magicsite') . '/magicsite.js');
+
+    drupal_add_css('https://js.edusite.ru/mmagicutf.css', 'external');
+    drupal_add_css('https://js.edusite.ru/jquery.fancybox.min.css', 'external');
+
+    drupal_add_js('var magicsite_url = "' . $url . '";', 'inline');
+    $output .= _get_magicsite_page_content($url, $path, $page);
+  }
+
+  return $output;
+}
+
+function magicsite_settings(){
+  $form = array();
+  $form['magicsite_url'] = array(
+    '#type' => 'textfield',
+    '#title' => 'URL сайта в ИС MagicSite',
+    '#default_value' => variable_get('magicsite_url', ''),
+    '#element_validate' => array('magicsite_url_check'),
+    '#required' => TRUE,
+  );
+
+  return system_settings_form($form);
+}
+
+function magicsite_url_check($element, &$form_state){
+  if (empty($element['#value'])) {
+    form_error($element, t('This field is required.'));
+  } elseif (!_get_magicsite_url($element['#value'])) {
+    form_error($element, 'Неверное значение поля "URL сайта в среде MagicSite"');
+  } else {
+    $form_state['values']['magicsite_url'] = _get_magicsite_url($element['#value']);
+  }
+}
+
+function _get_magicsite_url($uri) {
+  $uri = trim($uri);
+  preg_match('/^(https?:\/\/)?/', $uri, $proto);
+  if (!isset($proto[1])) {
+    $uri = "http://" . $uri;
+  }
+  $url = parse_url($uri);
+  if (!isset( $url['host'])) {
+    return FALSE;
+  }
+  if (checkdnsrr($url['host'], "A") && gethostbyname($url['host']) == gethostbyname('edusite.ru')) {
+    $output = $url['scheme'] . '://';
+    $output .= $url['host'];
+    if (isset($url['port'])) {
+      $output .= ':' . $url['port'];
+    }
+    if (isset($url['path'])) {
+      $output .= $url['path'];
+    }
+    $res = _get_magicsite_page($output, 1);
+
+    if ($res['response_code'] == 200) {
+      return $res['effective_url'];
+    }
+  }
+
+  return FALSE;
+}
+
+function _get_magicsite_page_content($url, $category, $page) {
+  $content = '';
+  $response = _get_magicsite_page($url.$category.'/'.$page.'.html');
+  if ($response['response_code'] == 200) {
+    $dom = new DOMDocument();
+    $dom->preserveWhiteSpace = false;
+    libxml_use_internal_errors(true);
+    $dom->loadHTML($response['response']);
+    $xpath = new DOMXPath($dom);
+
+    $ls_ads = $xpath->query('//a');
+    foreach ($ls_ads as $ad) {
+      if ($ad->hasAttribute('href')) {
+        $ad_url = $ad->getAttribute('href');
+        $f = parse_url($ad_url);
+        if (!isset($f['scheme']) && !isset($f['host']) && isset($f['path'])) {
+          $ad->setAttribute('href', $url . $f['path']);
+        }
+      }
+    }
+
+    $images = $dom->getElementsByTagName('img');
+    foreach ($images as $image) {
+      $src = $image->getAttribute('src');
+      $f = parse_url($src);
+      if (!isset($f['scheme']) && !isset($f['host']) && isset($f['path'])) {
+        $image->setAttribute('src', $url . $f['path']);
+      }
+    }
+
+    $categorys = $xpath->query("//*[contains(@class, 'inner-page-block')]");
+    foreach ($categorys as $category) {
+      $content .= $dom->saveHTML($category);
+    }
+
+    $links = $xpath->query("//link[contains(@id, 'magic-skin')]");
+    $categorys = $xpath->query("//*[contains(@class, '" . $page . "-page-script')]");
+    $magic_script ='';
+    foreach ($categorys as $category) {
+      $magic_script .= $dom->saveHTML($category);
+    }
+
+    libxml_clear_errors();
+    $content = str_replace("\n", "", $content) . $magic_script;
+  } else {
+    $content = '<div>Не удалось получить данные. Удаленный сервер вернул код ' . ($response['response_code'] ?? '0') . '</div>';
+  }
+
+  return $content;
+}
+
+function _get_magicsite_page($uri, $header = FALSE) {
+  $response = array();
+  $url = parse_url($uri);
+  $curlInit = curl_init($uri);
+
+  curl_setopt($curlInit, CURLOPT_CONNECTTIMEOUT, 20);
+
+  if ($header) {
+    curl_setopt($curlInit, CURLOPT_HEADER, true);
+    curl_setopt($curlInit, CURLOPT_NOBODY, true);
+  }
+
+  if ($url['scheme'] == 'https') {
+    curl_setopt($curlInit, CURLOPT_SSL_VERIFYHOST	, 2);
+  }
+
+  curl_setopt($curlInit, CURLOPT_SSL_VERIFYPEER, false);
+  curl_setopt($curlInit, CURLOPT_RETURNTRANSFER, true);
+  curl_setopt($curlInit, CURLOPT_FOLLOWLOCATION, true);
+  curl_setopt($curlInit, CURLOPT_COOKIEJAR, '-');
+  curl_setopt($curlInit, CURLOPT_REFERER, $_SERVER['SERVER_NAME']);
+  curl_setopt($curlInit, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows NT 10.0; Win64; x64)");
+
+  $response['response'] = curl_exec($curlInit);
+  $response['effective_url'] = curl_getinfo($curlInit, CURLINFO_EFFECTIVE_URL);
+  $response['response_code'] = intval(curl_getinfo($curlInit, CURLINFO_HTTP_CODE));
+
+  curl_close($curlInit);
+
+  return $response;
+}

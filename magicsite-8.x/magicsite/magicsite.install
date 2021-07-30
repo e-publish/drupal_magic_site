@@ -1,0 +1,21 @@
+<?php
+function magicsite_install() {
+  $menu = \Drupal::entityTypeManager()->getStorage('menu')
+    ->create([
+      'langcode' => 'en',
+      'status' => true,
+      'id' => 'magicsite',
+      'label' => 'Сведения об образовательной организации',
+      'description' => 'Меню обязательных разделов сайта образовательной организации',
+      'locked' => false
+    ])->save();
+
+  drupal_flush_all_caches();
+}
+
+function magicsite_uninstall() {
+  if ($menu = \Drupal::entityTypeManager()->getStorage('menu')->load('magicsite')) {
+    $menu->delete();
+  }
+  drupal_flush_all_caches();
+}

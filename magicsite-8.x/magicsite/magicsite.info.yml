@@ -1,0 +1,8 @@
+
+name: MagicSite
+type: module
+description: 'Модуль интеграции MagicSite с Drupal'
+package: E-Publish
+version: 0.1
+core: 8.x
+configure: magicsite.settings.form

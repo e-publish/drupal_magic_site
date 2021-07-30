@@ -1,0 +1,7 @@
+name = MagicSite
+description = Модуль интеграции MagicSite с Drupal
+package = E-Publish
+core = 7.x
+version = "7.x-0.1"
+dependencies[] = jquery_update
+configure = "admin/config/magicsite"

@@ -1,0 +1,13 @@
+magicsite:
+  version: 1.x
+  header: true
+  js:
+    https://js.edusite.ru/jquery.fancybox.min.js: { external: true }
+    https://api-maps.yandex.ru/2.1/?lang=ru_RU: { external: true }
+    js/magicsite.js: {}
+  dependencies:
+    - core/jquery
+  css:
+    layout:
+      https://js.edusite.ru/mmagicutf.css: { external: true}
+      https://js.edusite.ru/jquery.fancybox.min.css: {external: true}

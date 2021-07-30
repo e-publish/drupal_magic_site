@@ -1,0 +1,28 @@
+<?php
+function magicsite_install() {
+  $menu = array(
+    'menu_name' => 'magicsite-menu',
+    'title' => 'Сведения об образовательной организации',
+    'description' => 'Сведения об образовательной организации',
+  );
+  menu_save($menu);
+
+  cache_clear_all('*', 'cache_menu', TRUE);
+}
+
+function magicsite_uninstall() {
+  $menu = array(
+    'menu_name' => 'magicsite-menu',
+    'title' => 'Сведения об образовательной организации',
+    'description' => 'Сведения об образовательной организации',
+  );
+  menu_delete($menu);
+
+  variable_del('magicsite_url');
+
+  db_delete('block')
+    ->condition('delta', 'magicsite-menu')
+    ->execute();
+
+  cache_clear_all('*', 'cache_menu', TRUE);
+}
